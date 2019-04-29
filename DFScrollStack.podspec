@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DFScrollStack'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = 'Combine multiple scrollviews into one! Complete with proper cell recycling for collection and table views.'
 
 # This description is used to generate tags and improve search results.
