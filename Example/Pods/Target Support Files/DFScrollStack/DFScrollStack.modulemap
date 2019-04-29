@@ -1,0 +1,6 @@
+framework module DFScrollStack {
+  umbrella header "DFScrollStack-umbrella.h"
+
+  export *
+  module * { export * }
+}

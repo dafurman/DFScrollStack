@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExampleVC" customModule="PuffyScroll" customModuleProvider="target">
+            <connections>
+                <outlet property="diagnosticsTableView" destination="oyt-Px-Wzk" id="BHO-Ox-yXh"/>
+                <outlet property="numCellsLabel" destination="Aph-ru-PCC" id="YE8-km-c1l"/>
+                <outlet property="numCellsStepper" destination="8tB-2r-8AT" id="YYD-gQ-OMA"/>
+                <outlet property="scrollStackContainer" destination="Smp-4M-ZoB" id="bIO-Nc-pJk"/>
+                <outlet property="scrollStackInsertionButtons" destination="lv8-uA-i6l" id="mO3-Bp-8OJ"/>
+                <outlet property="view" destination="8Mq-dG-Tb1" id="co9-bF-qZV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="8Mq-dG-Tb1">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqa-Oi-krB">
+                    <rect key="frame" x="263" y="28" width="96" height="140.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lv8-uA-i6l">
+                            <rect key="frame" x="4" y="0.0" width="88" height="140.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvh-hm-M80">
+                                    <rect key="frame" x="0.0" y="0.0" width="88" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufu-QD-yLp">
+                                    <rect key="frame" x="0.0" y="20.5" width="88" height="30"/>
+                                    <state key="normal" title="TableVC"/>
+                                    <connections>
+                                        <action selector="didPressInsertTableButton" destination="-1" eventType="touchUpInside" id="6Kr-Fs-pEw"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2H-yg-izJ">
+                                    <rect key="frame" x="0.0" y="50.5" width="88" height="30"/>
+                                    <state key="normal" title="CollectionVC"/>
+                                    <connections>
+                                        <action selector="didPressInsertCollectionButton" destination="-1" eventType="touchUpInside" id="kfg-f9-R2y"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chs-qC-b5c">
+                                    <rect key="frame" x="0.0" y="80.5" width="88" height="30"/>
+                                    <state key="normal" title="NonScrollVC"/>
+                                    <connections>
+                                        <action selector="didPressInsertNonScrollingButton" destination="-1" eventType="touchUpInside" id="Wil-YJ-PQi"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxq-cD-ByI">
+                                    <rect key="frame" x="0.0" y="110.5" width="88" height="30"/>
+                                    <state key="normal" title="TabVC"/>
+                                    <connections>
+                                        <action selector="didPressInsertTabVCButton" destination="-1" eventType="touchUpInside" id="RuQ-un-RPy"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="lv8-uA-i6l" secondAttribute="bottom" id="8CL-Uw-RIq"/>
+                        <constraint firstAttribute="trailing" secondItem="lv8-uA-i6l" secondAttribute="trailing" constant="4" id="GCL-yQ-efh"/>
+                        <constraint firstItem="lv8-uA-i6l" firstAttribute="leading" secondItem="yqa-Oi-krB" secondAttribute="leading" constant="4" id="oCN-E9-22f"/>
+                        <constraint firstItem="lv8-uA-i6l" firstAttribute="top" secondItem="yqa-Oi-krB" secondAttribute="top" id="sRq-Mt-3w7"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oyt-Px-Wzk">
+                    <rect key="frame" x="16" y="28" width="239" height="343.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Smp-4M-ZoB">
+                    <rect key="frame" x="16" y="420" width="343" height="239"/>
+                </containerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Num Cells of Selection: N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aph-ru-PCC">
+                    <rect key="frame" x="16" y="387.5" width="214" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stepper opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-2r-8AT">
+                    <rect key="frame" x="265" y="383" width="94" height="29"/>
+                    <connections>
+                        <action selector="didChangeNumCells:" destination="-1" eventType="valueChanged" id="nNd-D0-OhI"/>
+                    </connections>
+                </stepper>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ZVd-wN-yOJ" firstAttribute="bottom" secondItem="Smp-4M-ZoB" secondAttribute="bottom" constant="8" id="2sS-hr-DlM"/>
+                <constraint firstItem="yqa-Oi-krB" firstAttribute="top" secondItem="ZVd-wN-yOJ" secondAttribute="top" constant="8" id="510-zS-S0d"/>
+                <constraint firstItem="Smp-4M-ZoB" firstAttribute="top" secondItem="8tB-2r-8AT" secondAttribute="bottom" constant="8" id="5XC-NG-2Q2"/>
+                <constraint firstItem="Aph-ru-PCC" firstAttribute="centerY" secondItem="8tB-2r-8AT" secondAttribute="centerY" id="CkG-KX-nbn"/>
+                <constraint firstItem="ZVd-wN-yOJ" firstAttribute="trailing" secondItem="yqa-Oi-krB" secondAttribute="trailing" constant="16" id="FG1-7u-7me"/>
+                <constraint firstItem="oyt-Px-Wzk" firstAttribute="leading" secondItem="ZVd-wN-yOJ" secondAttribute="leading" constant="16" id="HHB-MT-hVE"/>
+                <constraint firstItem="Smp-4M-ZoB" firstAttribute="leading" secondItem="ZVd-wN-yOJ" secondAttribute="leading" constant="16" id="IhA-Bh-Huf"/>
+                <constraint firstItem="Smp-4M-ZoB" firstAttribute="top" secondItem="ZVd-wN-yOJ" secondAttribute="top" constant="400" id="PNt-DC-kaD"/>
+                <constraint firstItem="oyt-Px-Wzk" firstAttribute="top" secondItem="ZVd-wN-yOJ" secondAttribute="top" constant="8" id="VWE-Fa-dO2"/>
+                <constraint firstItem="ZVd-wN-yOJ" firstAttribute="trailing" secondItem="Smp-4M-ZoB" secondAttribute="trailing" constant="16" id="VqE-mC-SeX"/>
+                <constraint firstItem="yqa-Oi-krB" firstAttribute="leading" secondItem="oyt-Px-Wzk" secondAttribute="trailing" constant="8" id="XGH-KI-hHd"/>
+                <constraint firstItem="Aph-ru-PCC" firstAttribute="top" secondItem="oyt-Px-Wzk" secondAttribute="bottom" constant="16" id="aSf-Ks-NMq"/>
+                <constraint firstItem="Aph-ru-PCC" firstAttribute="leading" secondItem="ZVd-wN-yOJ" secondAttribute="leading" constant="16" id="eyX-ZV-i7f"/>
+                <constraint firstItem="ZVd-wN-yOJ" firstAttribute="trailing" secondItem="8tB-2r-8AT" secondAttribute="trailing" constant="16" id="hEg-0M-btA"/>
+                <constraint firstItem="8tB-2r-8AT" firstAttribute="leading" secondItem="Aph-ru-PCC" secondAttribute="trailing" constant="35" id="zuM-ln-FQR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZVd-wN-yOJ"/>
+        </view>
+    </objects>
+</document>

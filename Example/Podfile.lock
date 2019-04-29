@@ -1,0 +1,16 @@
+PODS:
+  - DFScrollStack (0.1.0)
+
+DEPENDENCIES:
+  - DFScrollStack (from `../`)
+
+EXTERNAL SOURCES:
+  DFScrollStack:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DFScrollStack: 2bd098c692426956dfa33f41dca4a5da4b3c5fa9
+
+PODFILE CHECKSUM: ce3865c80ce323be7cd51a19abf004a71b0ff353
+
+COCOAPODS: 1.6.1
