@@ -1,6 +1,5 @@
 # DFScrollStack
 
-[![CI Status](https://img.shields.io/travis/dafurman/DFScrollStack.svg?style=flat)](https://travis-ci.org/dafurman/DFScrollStack)
 [![Version](https://img.shields.io/cocoapods/v/DFScrollStack.svg?style=flat)](https://cocoapods.org/pods/DFScrollStack)
 [![License](https://img.shields.io/cocoapods/l/DFScrollStack.svg?style=flat)](https://cocoapods.org/pods/DFScrollStack)
 [![Platform](https://img.shields.io/cocoapods/p/DFScrollStack.svg?style=flat)](https://cocoapods.org/pods/DFScrollStack)
