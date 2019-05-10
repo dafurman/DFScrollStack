@@ -53,13 +53,6 @@ public class ScrollStackController: UIViewController {
                 }
             }
             
-            // Set the container of any new view controllers.
-            for stackContainable in newValue.compactMap({ $0 }) {
-                if !viewControllers.contains(where: { $0 === stackContainable }) {
-                    stackContainable.scrollingStackController = self
-                }
-            }
-            
             items = newValue.map { ScrollStackItem(stackContainable: $0) }
             updateItemsLayout()
 		}

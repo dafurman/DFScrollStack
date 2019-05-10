@@ -9,9 +9,6 @@ import UIKit
 
 /// Conform a UIViewController to ScrollStackContainable to allow it to be placed within a ScrollStackController.
 public protocol ScrollStackContainable: class {
-    /// The ScrollStackController that this ScrollStackContainable is inserted in and being controlled by.
-    var scrollingStackController: ScrollStackController! { get set }
-    
     /// The primary scroll view in the stack containable's view. This is expected to be a vertically-scrolling scrollview.
     var scrollView: UIScrollView? { get }
     
@@ -65,8 +62,6 @@ public extension ScrollStackContainable where Self: UIViewController {
     var insets: UIEdgeInsets { return .zero }
     
     var scrollView: UIScrollView? { return nil }
-    
-    var scrollingStackController: ScrollStackController! { return nil }
     
     func updatePreferredContentSize() {
         let contentHeight = self.contentHeight

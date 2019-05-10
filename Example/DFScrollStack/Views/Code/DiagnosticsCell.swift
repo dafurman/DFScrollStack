@@ -66,11 +66,12 @@ final class DiagnosticsCell: UITableViewCell {
     private func update(scrollStackItem: ScrollStackItem) {
         let viewController = scrollStackItem.viewController
         let stackContainable = scrollStackItem.scrollStackContainable
-        
+        let visibility: ScrollStackItem.VisibilityState = scrollStackItem.viewController.scrollStackController?.getItemVisibilityState(item: scrollStackItem) ?? .none
+
         var detailText = """
         Frame: \(viewController.view.frame)
         Insets: \(String(describing: stackContainable.insets.description))
-        Visibility: \(stackContainable.scrollingStackController.getItemVisibilityState(item: scrollStackItem))
+        Visibility: \(String(describing: visibility))
         Stack Containable Height: \(stackContainable.contentHeight)
         Item Rect: \(scrollStackItem.rect)
         """

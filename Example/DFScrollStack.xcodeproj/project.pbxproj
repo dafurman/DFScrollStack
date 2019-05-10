@@ -192,8 +192,8 @@
 		DCDCCD9E2276AEE70012DA13 /* ScrollVCs */ = {
 			isa = PBXGroup;
 			children = (
-				DCDCCD9F2276AEE70012DA13 /* TableVC.swift */,
 				DCDCCDA02276AEE70012DA13 /* ScrollVC.swift */,
+				DCDCCD9F2276AEE70012DA13 /* TableVC.swift */,
 				DCDCCDA12276AEE70012DA13 /* CollectionVC.swift */,
 			);
 			path = ScrollVCs;

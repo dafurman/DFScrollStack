@@ -23,11 +23,11 @@ final class ExampleVC: UIViewController {
             scrollStackContainer.layer.borderColor = UIColor.black.cgColor
             scrollStackContainer.layer.borderWidth = 1
 
-            scrollStackController.view.translatesAutoresizingMaskIntoConstraints = false
+            exampleScrollStackController.view.translatesAutoresizingMaskIntoConstraints = false
             
-            scrollStackContainer.addSubview(scrollStackController.view)
+            scrollStackContainer.addSubview(exampleScrollStackController.view)
             
-            scrollStackController.view.constrainToEdges(of: scrollStackContainer)
+            exampleScrollStackController.view.constrainToEdges(of: scrollStackContainer)
         }
     }
     
@@ -57,7 +57,7 @@ final class ExampleVC: UIViewController {
     private let diagnosticsTableViewDataSource = DiagnosticsTableDataSource()
     
     /// The ScrollStackController being used as an example.
-    private let scrollStackController = ScrollStackController()
+    private let exampleScrollStackController = ScrollStackController()
 
     
     
@@ -148,9 +148,9 @@ final class ExampleVC: UIViewController {
         viewController.title = title
 
         // Insert the view controller.
-        scrollStackController.viewControllers.append(scrollStackContainable)
+        exampleScrollStackController.viewControllers.append(scrollStackContainable)
         
-        let scrollStackItem = scrollStackController.items.last!
+        let scrollStackItem = exampleScrollStackController.items.last!
         addScrollStackItemToDiagnostics(scrollStackItem: scrollStackItem)
         
         // Select the newly inserted view controller in the diagnostics table.
@@ -180,7 +180,7 @@ final class ExampleVC: UIViewController {
     /// Called when the `numCellsStepper`'s value is changed. This changes the number of cells that are associated with the view controller that's being viewed in diagnostics table entry.
     @IBAction private func didChangeNumCells(_ sender: UIStepper) {
         guard let selectedIndexPath = diagnosticsTableView.indexPathForSelectedRow else { return }
-        let vc = scrollStackController.viewControllers[selectedIndexPath.row]
+        let vc = exampleScrollStackController.viewControllers[selectedIndexPath.row]
         
         let newNumCells = Int(sender.value)
         
@@ -211,7 +211,7 @@ extension ExampleVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = scrollStackController.viewControllers[indexPath.row]
+        let vc = exampleScrollStackController.viewControllers[indexPath.row]
         
         let numCells: Int
         
@@ -243,7 +243,7 @@ extension ExampleVC: UITableViewDelegate {
         let scrollTopAction = UIContextualAction(style: .normal, title: "Scroll ⬆") { [weak self](action, view, completion) in
             guard let self = self else { return }
             
-            self.scrollStackController.scrollToItem(at: indexPath.row, scrollPosition: .top, animated: true)
+            self.exampleScrollStackController.scrollToItem(at: indexPath.row, scrollPosition: .top, animated: true)
             
             completion(true)
         }
@@ -252,7 +252,7 @@ extension ExampleVC: UITableViewDelegate {
         let scrollBotAction = UIContextualAction(style: .normal, title: "Scroll ⬇") { [weak self](action, view, completion) in
             guard let self = self else { return }
             
-            self.scrollStackController.scrollToItem(at: indexPath.row, scrollPosition: .bottom, animated: true)
+            self.exampleScrollStackController.scrollToItem(at: indexPath.row, scrollPosition: .bottom, animated: true)
             
             completion(true)
         }
@@ -266,7 +266,7 @@ extension ExampleVC: UITableViewDelegate {
         let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { [weak self](action, view, completion) in
             guard let self = self else { return }
             
-            self.scrollStackController.viewControllers.remove(at: indexPath.row)
+            self.exampleScrollStackController.viewControllers.remove(at: indexPath.row)
             
             self.diagnosticsTableViewDataSource.scrollStackItems.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)

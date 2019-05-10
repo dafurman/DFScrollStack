@@ -6,6 +6,7 @@
 //
 
 import UIKit.UIViewController
+import DFScrollStack
 
 extension UIViewController {
     
@@ -17,5 +18,17 @@ extension UIViewController {
         name = name.replacingOccurrences(of: "VC", with: "View")
         name = name.replacingOccurrences(of: "ViewController", with: "View")
         return name
+    }
+    
+    /// If this viewController belongs to a ScrollStackController, return it.
+    var scrollStackController: ScrollStackController? {
+        var parentVC = parent
+        while parentVC != nil {
+            if let scrollStackController = parentVC as? ScrollStackController {
+                return scrollStackController
+            }
+            parentVC = parentVC?.parent
+        }
+        return nil
     }
 }

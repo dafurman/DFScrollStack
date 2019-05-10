@@ -15,14 +15,6 @@ final class ExampleTabVC: TabVC {
     // MARK: - Properties
     // ========
     
-    var scrollingStackController: ScrollStackController! {
-        didSet {
-            if let displayedVC = displayedVC as? ScrollStackContainable {
-                displayedVC.scrollingStackController = scrollingStackController
-            }
-        }
-    }
-    
     override var displayedVC: UIViewController! {
         didSet {
             updatePreferredContentSize()
@@ -62,21 +54,18 @@ final class ExampleTabVC: TabVC {
             let vc = CollectionVC()
             vc.title = "CollectionVC - Top and Bot"
             vc.dataSource.numCells = (index + 1) * 20
-            vc.scrollingStackController = scrollingStackController
             return vc
         case 1:
             let vc = CollectionVC()
             vc.title = "CollectionVC - Bottomless"
             vc.showsBotLabel = false
             vc.dataSource.numCells = (index + 1) * 20
-            vc.scrollingStackController = scrollingStackController
             return vc
         case 2:
             let vc = CollectionVC()
             vc.title = "CollectionVC - Topless"
             vc.showsTopLabel = false
             vc.dataSource.numCells = (index + 1) * 20
-            vc.scrollingStackController = scrollingStackController
             return vc
         case 3:
             let vc = CollectionVC()
@@ -84,18 +73,15 @@ final class ExampleTabVC: TabVC {
             vc.showsTopLabel = false
             vc.showsBotLabel = false
             vc.dataSource.numCells = (index + 1) * 20
-            vc.scrollingStackController = scrollingStackController
             return vc
         case 4:
             let vc = TableVC()
             vc.title = "TableVC - \(index + 1)"
             vc.dataSource.numCells = (index + 1) * 20
-            vc.scrollingStackController = scrollingStackController
             return vc
         case 5:
             let vc = NonScrollVC()
             vc.title = "NonScrollVC - \(index + 1)"
-            vc.scrollingStackController = scrollingStackController
             return vc
         default:
             fatalError()
