@@ -15,7 +15,6 @@ class ScrollVC: UIViewController, ScrollStackContainable {
     // MARK: - Properties
     // ========
     
-    var scrollingStackController: ScrollStackController!
     var scrollView: UIScrollView? { return nil }
     var insets: UIEdgeInsets {
         let top = showsTopLabel ? topInset : 0
